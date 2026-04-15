@@ -1444,8 +1444,8 @@ async def command_hunt_handler(message: Message):
     await update_user_data(message.from_user.id, user)
 
     # Добавляем опыт Inc Pass
-    hunting_exp = random.randint(settings.get('pass_activity', {}).get('hunting', (50, 100))[0], 
-                                 settings.get('pass_activity', {}).get('hunting', (50, 100))[1])
+    hunting_exp = random.randint(settings.get('pass_activity', {}).get('hunting', (50, 75))[0], 
+                                 settings.get('pass_activity', {}).get('hunting', (50, 75))[1])
     pass_result = await add_pass_exp(message.from_user.id, hunting_exp)
 
     answer_text = f"🏹 Вы поймали {animal}, И получили <b>{money_earned:,}</b> монет."
@@ -1862,7 +1862,7 @@ async def search_herb_event(message: Message):
         )
         return
 
-    exp_amount = random.randint(25, 700)
+    exp_amount = random.randint(25, 567)
     await add_pass_exp(user_id, exp_amount)
 
     case_drop_text = ""
@@ -2329,8 +2329,8 @@ async def command_fish_handler(message: Message):
     await update_user_data(message.from_user.id, user)
     
     # Добавляем опыт Inc Pass
-    fishing_exp = random.randint(settings.get('pass_activity', {}).get('fishing', (20, 50))[0], 
-                                 settings.get('pass_activity', {}).get('fishing', (20, 50))[1])
+    fishing_exp = random.randint(settings.get('pass_activity', {}).get('fishing', (20, 35))[0], 
+                                 settings.get('pass_activity', {}).get('fishing', (20, 35))[1])
     pass_result = await add_pass_exp(message.from_user.id, fishing_exp)
 
     answer_text = f"🎣 Улов: <b>{html.escape(chosen_fish_name)}</b>! 💰 Заработано: <b>{money_earned:,}</b> монет."
@@ -3282,7 +3282,7 @@ async def open_case_handler(message: Message, command: CommandObject = None):
 
     elif case_key == 'mythical':
         amounts = [20000000, 50000000, 100000000]
-        weights = [50, 30, 20]
+        weights = [65, 23, 12]
         reward = random.choices(amounts, weights)[0]
         user['balance_normal'] += reward
         await update_user_data(user_id, user)
