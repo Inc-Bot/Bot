@@ -26,7 +26,7 @@ from aiogram.types import (
     PreCheckoutQuery,
 )
 # --- Конфигурация ---
-API_TOKEN = '8746084180:AAFCv7Gq7PT50k3uXlur-UR5st7ElMVOpG0'       
+API_TOKEN = '8070912034:AAEjYMBIQz82TI2bQkK8NOsKyA5A1q_xqDM'       
 DB_PATH = 'botytt_data.db' # Путь к файлу базы данных SQLite
 ADMIN_IDS = [5152638249, 7895619658] # СПИСОК ID АДМИНИСТРАТОРОВ
 
